@@ -1,0 +1,25 @@
+{
+  "name": "Weather_App",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "dependencies": {
+    "postman-request": "^2.88.1-postman.28",
+    "request": "^2.88.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wigsters52/Weather_App.git"
+  },
+  "keywords": [],
+  "author": "Ryan Wiggins",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wigsters52/Weather_App/issues"
+  },
+  "homepage": "https://github.com/wigsters52/Weather_App#readme"
+}
