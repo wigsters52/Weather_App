@@ -1,8 +1,16 @@
 const request = require('postman-request');
 
-const url = 'http://api.weatherstack.com/current?access_key=4fa4dcf2e3ad5b15e01dc6ee1e4e794e&query=40.6796,-73.9213'
+const url = 'http://api.weatherstack.com/current?access_key=4fa4dcf2e3ad5b15e01dc6ee1e4e794e&query=40.6796,-73.9213&units=f'
 
-request({ url }, (error, res) => {
-    const data = JSON.parse(res.body)
-    console.log(data.current)
+const geocodeURL = 'https://api.mapbox.com/geocoding/v5/mapbox.places/Los%20Angeles.json?access_token=pk.eyJ1IjoicnlhbndpZ2dpbnM1MiIsImEiOiJjang1YW9tM2QwMXdhNDNtcHZzZ3pmaXdqIn0.zavpXiXHjOUkxS05fPJqSQ&limit=1'
+
+request({ url, json: true }, (error, res) => {
+    console.log(`${res.body.current.weather_descriptions[0]}. The current temperature is ${res.body.current.temperature} and it feels like ${res.body.current.feelslike}`)
+
+})
+
+request({ url: geocodeURL, json: true }, (error, res) => {
+    const lat = res.body.features[0].center[0]
+    const long = res.body.features[0].center[1]
+    console.log(lat, long)
 })
